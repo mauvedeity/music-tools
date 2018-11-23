@@ -11,13 +11,25 @@ def ensuredir(artist, album):
     os.mkdir(dirname)
   return(dirname)
 
+def ensurecdir(album):
+  album = album.replace('/', '_')
+  dirname = unicode(album)
+  if(not(os.access(dirname, os.F_OK))):
+    os.mkdir(dirname)
+  return(dirname)
+
 def processfile(fname):
   id3r = id3reader.Reader(fname)
   album = unicode(id3r.getValue('album'))
   artist = unicode(id3r.getValue('performer'))
   title = unicode(id3r.getValue('title'))
-  newdir = ensuredir(artist, album)
-# os.system('mv "%s" "%s"' % (fname,newdir))
+  iscomp = id3r.getValue('TCP')
+
+  if (iscomp is None):
+    newdir = ensuredir(artist, album)
+  else:
+    newdir = ensurecdir(album)
+
   os_str = 'mv '
   os_str += '"'
   os_str += fname.encode("utf-8", "ignore")
@@ -27,8 +39,7 @@ def processfile(fname):
   os_str += newdir.encode("utf-8", "ignore")
   os_str += '"'
   os.system(os_str)
-
-
+  print os_str
 
 def procallfiles():
   files = os.listdir(os.getcwd())
