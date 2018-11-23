@@ -39,8 +39,11 @@ Step 4 - move the folder structure, minus the script files, to your destination 
 
 * I *think* I've fixed all of the Unicode bugs. Thanks, Beyoncé!
 * There's no indication of progress other than folders appearing.
-* It would be easier if you just ran one command, and it converted where necessary and moved afterwards.
-* It's single-threaded at the moment, so only one ffmpeg conversion process gets kicked off at a time, which leads to a fair bit of under use of the processor. It'd be nice if it would do multiple file conversions.
+* It would be easier if you just ran one command, and it converted where
+  necessary and moved afterwards.
+* It's single-threaded at the moment, so only one `ffmpeg` conversion process gets
+  kicked off at a time, which leads to a fair bit of under use of the processor.
+  It'd be nice if it would do multiple file conversions.
 
 ## Bugs
 
