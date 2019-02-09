@@ -1,4 +1,5 @@
 # music-tools
+
 These are the files I wrote to automate the process of creating usable MP3 CDs
 or SD card folders for playing media in the cars I've owned over the last few
 years.
@@ -18,9 +19,11 @@ a playlist or several out of iTunes.
 Step 2 - if the files are M4As, not MP3s, and you don't have another way to
 batch convert the files, then use the `convert.sh` script to process them into
 MP3 format. This can be automated using `find`:
+
 ```bash
 find . -name "*.m4a" -exec convert.sh {} \;
 ```
+
 should work to convert all of the files. Note that this **requires** that
 `ffmpeg` is on your path. 
 
@@ -61,6 +64,3 @@ The `id3reader` code comes from
 but that doesn't seem to have been updated for a while, sadly.
 I've included it here as the page above clearly states this
 code is in the public domain. Follow the link for more information.
-
-
-
