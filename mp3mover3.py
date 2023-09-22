@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!env python3
 
 import os
 import id3reader_p3
