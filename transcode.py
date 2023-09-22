@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!env python3
 
 from multiprocessing import Pool as ThreadPool
 from multiprocessing import cpu_count
